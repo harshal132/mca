@@ -4,7 +4,6 @@
 #include<iostream>
 using namespace std;
 void showArray(int arr[],int size) {
-	//cout<<"Saved Array is \n";
 	for(int i=0;i<size;i++) {
 		cout<<arr[i]<<"\n";
 	}
@@ -21,7 +20,7 @@ void deleteElement(int value, int arr[], int length) {
 		break;
 		}
 		else if(i==length-1){
-			cout<<"Element not present in given Array";
+			cout<<"Element not present in given Array\n";
 		}
 	}
 	cout<<"Array After Deleting Element\n";
@@ -48,4 +47,3 @@ int main() {
 	
 	return 0;
 }
-
