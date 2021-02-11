@@ -1,0 +1,53 @@
+=> 	CREATE TABLE sales(
+	prod_id number,
+	cust_id number,
+	time_id date,
+	channel_id char,
+	promo_id number,
+	quantity_sold number,
+	amount_sold number
+	)
+	PARTITION by range(time_id) (
+	PARTITION sales_q1_2006 VALUES less than (to_date('2006-mar-31','yyyy-MON-dd')),
+	PARTITION sales_q2_2006 VALUES less than (to_date('2006-jun-30','yyyy-MON-dd')),
+	PARTITION sales_q3_2006 VALUES less than (to_date('2006-sep-30','yyyy-MON-dd')),
+	PARTITION sales_q4_2006 VALUES less than (to_date('2006-dec-31','yyyy-MON-dd'))
+	);
+	
+	
+=>  insert into sales values(46,1298, to_date('2006-jan-02','yyyy-MON-dd'),'A', 101, 23, 45032);
+	insert into sales values(5,1838, to_date('2006-feb-27','yyyy-MON-dd'),'X', 101, 7, 1432);
+	insert into sales values(1,1848, to_date('2006-mar-17','yyyy-MON-dd'),'Q', 101, 37, 35032);
+	
+	insert into sales values(3,9566, to_date('2006-jun-11','yyyy-MON-dd'),'P', 101, 45, 65032);
+	insert into sales values(345,6355, to_date('2006-apr-21','yyyy-MON-dd'),'P', 101, 12, 5032);
+	insert into sales values(8,3365, to_date('2006-may-15','yyyy-MON-dd'),'O', 101, 19, 5932);
+	
+	insert into sales values(180,0707, to_date('2006-jul-24','yyyy-MON-dd'),'O', 101, 82, 180000);
+	insert into sales values(6,1011, to_date('2006-aug-11','yyyy-MON-dd'),'B', 101, 29, 45132);
+
+	
+	insert into sales values(44,9935, to_date('2006-oct-18','yyyy-MON-dd'),'M', 101, 34, 4232);
+	insert into sales values(12,5463, to_date('2006-oct-10','yyyy-MON-dd'),'M', 101, 3, 452);
+	insert into sales values(11,4378, to_date('2006-nov-02','yyyy-MON-dd'),'Y', 101, 8, 4526);
+	insert into sales values(14,5438, to_date('2006-dec-25','yyyy-MON-dd'),'Y', 101, 38, 11032);
+	
+=>
+	select * from sales PARTITION(sales_q1_2006);
+	select * from sales PARTITION(sales_q2_2006);
+	select * from sales PARTITION(sales_q3_2006);
+	select * from sales PARTITION(sales_q4_2006);
+
+=>	
+	alter table sales add PARTITION sales_q1_2007 VALUES less than (to_date('2007-mar-31','yyyy-MON-dd'));
+	
+=>
+	delete from sales partition(sales_q1_2006);
+	
+=> 
+	alter table sales drop PARTITION sales_q1_2006;
+	
+=> 
+	select TABLE_OWNER,partition_name,num_rows,high_value,table_name from ALL_TAB_PARTITIONS where table_name='SALES';
+	
+	select partition_name,num_rows from ALL_TAB_PARTITIONS where table_name='SALES2';
