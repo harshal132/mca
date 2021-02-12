@@ -1,3 +1,4 @@
+#RANGE PARTITIONING
 => 	CREATE TABLE sales(
 	prod_id number,
 	cust_id number,
@@ -47,7 +48,72 @@
 => 
 	alter table sales drop PARTITION sales_q1_2006;
 	
-=> 
-	select TABLE_OWNER,partition_name,num_rows,high_value,table_name from ALL_TAB_PARTITIONS where table_name='SALES';
+=> 	BEGIN
+		DBMS_STATS.gather_table_stats('SYSTEM','SALES2');
+		END;
+		/
+	select table_name,partition_name,partition_position,high_value,num_rows from ALL_TAB_PARTITIONS where table_name='SALES2';
 	
-	select partition_name,num_rows from ALL_TAB_PARTITIONS where table_name='SALES2';
+#LIST PARTITIONING
+	
+=>
+	create table STUDENT (
+	student_id number,
+	student_name char,
+	student_dob date
+	)
+	PARTITION by LIST(student_name) (
+	PARTITION stu_divA values('a','b','c','d','e','f','g','h','i','j','k'),
+	PARTITION stu_divB values('n','o','p','q','r','s','t','u','v','w','x','y','z')
+	)ENABLE ROW MOVEMENT;
+	
+=>
+	insert into STUDENT values(101,'a',to_date('24-07-1998','dd-MM-yyyy'));
+	insert into STUDENT values(102,'n',to_date('02-02-1999','dd-MM-yyyy'));
+	insert into STUDENT values(103,'b',to_date('15-08-1998','dd-MM-yyyy'));
+	insert into STUDENT values(104,'c',to_date('14-02-1998','dd-MM-yyyy'));
+	insert into STUDENT values(105,'d',to_date('20-06-1998','dd-MM-yyyy'));
+	insert into STUDENT values(106,'e',to_date('04-10-1998','dd-MM-yyyy'));
+	insert into STUDENT values(107,'o',to_date('12-10-1998','dd-MM-yyyy'));
+	insert into STUDENT values(108,'p',to_date('10-10-1998','dd-MM-yyyy'));
+	insert into STUDENT values(109,'q',to_date('01-12-1998','dd-MM-yyyy'));
+	insert into STUDENT values(110,'r',to_date('19-09-1998','dd-MM-yyyy'));
+	
+=> 
+	select * from STUDENT partition(stu_divA);
+	select * from STUDENT partition(stu_divB);
+	
+	BEGIN
+		DBMS_STATS.gather_table_stats('SYSTEM','STUDENT');
+		END;
+		/
+		
+	select table_name,partition_name,partition_position,high_value,num_rows from ALL_TAB_PARTITIONS where table_name='STUDENT';
+	
+=>
+	alter table STUDENT add PARTITION stu_null VALUES (NULL);
+	
+=>
+	insert into STUDENT(student_id,student_dob) values(101,to_date('24-07-1998','dd-MM-yyyy'));
+	select * from STUDENT partition(stu_null);
+	
+=>
+	Default Scenario
+	create table STUDENT (
+	student_id number,
+	student_name char DEFAULT 'N',
+	student_dob date
+	)
+	PARTITION by LIST(student_name) (
+	PARTITION stu_divA values('a','b','c','d','e','f','g','h','i','j','k'),
+	PARTITION stu_divB values('n','o','p','q','r','s','t','u','v','w','x','y','z')
+	)ENABLE ROW MOVEMENT;
+	
+	alter table STUDENT add PARTITION stu_default VALUES (DEFAULT);
+	select * from STUDENT partition(stu_default);
+	
+	
+=>
+	alter table STUDENT modify PARTITION stu_divA ADD VALUES ('I', 'm');
+	insert into STUDENT values(120,'m',to_date('24-11-1998','dd-MM-yyyy'));
+	insert into STUDENT values(141,'I',to_date('20-07-1998','dd-MM-yyyy'));
