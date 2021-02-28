@@ -2,7 +2,6 @@
 
 using namespace std;
 void showArray(int *entries,int size) {
-	//cout<<"Saved Array is \n";
 	for(int i=0;i<size;i++){
 		cout<<entries[i]<<"\n";
 	}
@@ -18,15 +17,19 @@ int getMax(int *list,int length) {
 	return max;
 }
 
-void countSort(int list[],int arraySize,int pos)
-{
+void countSort(int *list,int arraySize,int pos){
 	int count[10]= {0};
 	int i;
 	int output[arraySize];
-	for(i=0;i<arraySize;i++)
-	count[(list[i]/pos)%10]++;
-	for(i=1;i<=9;i++)
-	count[i]=count[i]+count[i-1];
+	//fill the bucket count based on digit
+	for(i=0;i<arraySize;i++){
+		count[(list[i]/pos)%10]++;
+	}
+	//find actual positions of elements
+	for(i=1;i<=9;i++){
+		count[i]=count[i]+count[i-1];
+	}
+	//build array based on result from count array (start from last index to maintain stability)
 	for(i=arraySize-1;i>=0;i--)
 	{
 		output[count[(list[i]/pos)%10]-1]=list[i];
@@ -46,10 +49,8 @@ void radixSort(int list[],int arraySize) {
 	showArray(list,arraySize);
 }
 
-
 int main() {
-	int n,i;
-	
+	int n,i;	
 	cout<<"Enter number of elements ";
 	cin>>n;
 	int arr[n];
