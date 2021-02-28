@@ -40,7 +40,7 @@ void countSort(int *list,int arraySize,int pos){
 	}	
 }
 
-void radixSort(int list[],int arraySize) {
+void radixSort(int *list,int arraySize) {
 	int max = getMax(list,arraySize);
 	for(int pos=1;max/pos>0;pos=pos*10)
 	{
@@ -63,7 +63,7 @@ int main() {
 	ptr=arr;
 	cout<<"Recorded Details \n";
 	showArray(ptr,n);
-	cout<<"Sorting Array....\n";
+	cout<<"Sorting Array with Radix Sort....\n";
 	radixSort(ptr,n);
 	
 	return 0;

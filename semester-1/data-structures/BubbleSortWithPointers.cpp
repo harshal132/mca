@@ -1,5 +1,4 @@
 #include<iostream>
-
 using namespace std;
 void showArray(int *entries,int size) {
 	//cout<<"Saved Array is \n";
@@ -8,12 +7,10 @@ void showArray(int *entries,int size) {
 	}
 }
 
-
 void bubbleSort(int *entries,int n) {
 	int i,j,temp;
 	for(int i=0;i<n;i++){
-		for(j=0;j<n-1;j++){
-			
+		for(j=0;j<n-1;j++){			
 			if(entries[i] < entries[j]){
 				temp=entries[j];
 				entries[j]=entries[i];
@@ -24,15 +21,12 @@ void bubbleSort(int *entries,int n) {
 	showArray(entries,n);
 }
 
-
 int main() {
 	int n,i;
-	
 	cout<<"Enter number of elements ";
 	cin>>n;
 	int arr[n];
 	int *ptr=arr;
-	
 	for(int i=0;i<n;i++) {
 		cout<<"Enter "<<i+1<<"th Element :";
 		cin>>ptr[i];
@@ -40,8 +34,7 @@ int main() {
 	ptr=arr;
 	cout<<"Recorded Details \n";
 	showArray(ptr,n);
-	cout<<"Sorting Array....\n";
+	cout<<"Sorting Array with Bubble Sort....\n";
 	bubbleSort(ptr,n);
-	
 	return 0;
 }

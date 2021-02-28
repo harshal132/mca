@@ -1,7 +1,7 @@
 //Quick Sort - 16-02-2021
 #include<iostream>
 using namespace std;
-int partition(int arr[], int lower, int upper) {
+int partition(int *arr, int lower, int upper) {
 	int pivot = arr[lower]; // consider first element as pivot element
 	int start = lower;
 	int end = upper;
@@ -21,7 +21,6 @@ int partition(int arr[], int lower, int upper) {
 			arr[end]=temp;
 		}		
 	}
-	
 	temp= arr[lower];
 	arr[lower]=arr[end];
 	arr[end]=temp;
@@ -30,7 +29,6 @@ int partition(int arr[], int lower, int upper) {
 }
 
 void showArray(int *arr,int size) {
-	//cout<<"Saved Array is \n";
 	for(int i=0;i<size;i++){
 		cout<<arr[i]<<"\n";
 	}
@@ -47,17 +45,18 @@ void quickSort(int *arr,int lower, int upper) {
 
 int main() {
 	int n,i;
-	
 	cout<<"Enter number of elements ";
 	cin>>n;
 	int arr[n];
+	int *ptr=arr;
 	for(int i=0;i<n;i++) {
 		cout<<"Enter "<<i+1<<"th Element :";
-		cin>>arr[i];
+		cin>>ptr[i];
 	}
+	ptr=arr;
 	cout<<"Recorded Details \n";
-	showArray(arr,n);
-	cout<<"Sorting Array....\n";
+	showArray(ptr,n);
+	cout<<"Sorting Array with Quick Sort....\n";
 	quickSort(arr,0,n-1);
 	showArray(arr,n);
 	return 0;

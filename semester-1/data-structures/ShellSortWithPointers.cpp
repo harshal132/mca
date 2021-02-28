@@ -49,7 +49,7 @@ int main() {
 	ptr=arr;
 	cout<<"Recorded Details \n";
 	showArray(ptr,length);
-	cout<<"Sorting Array....\n";
+	cout<<"Sorting Array with Shell Sort....\n";
 	shellSort(ptr,length);
 	return 0;
 }
