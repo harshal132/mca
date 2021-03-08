@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 public partial class Cancel_Booking : System.Web.UI.Page
 {
     SqlCommand cmd = new SqlCommand();
-    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C: \Users\Deepak Maurya\Desktop\Appointment_Booking_System - 20191222T050711Z - 001\Appointment_Booking_System\App_Data\Database.mdf;Integrated Security=True;Connect Timeout=30");
+    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
     SqlDataAdapter sda = new SqlDataAdapter();
     DataSet ds = new DataSet();
 

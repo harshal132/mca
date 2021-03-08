@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 public partial class DoctorAppointments : System.Web.UI.Page
 {
     SqlCommand cmd = new SqlCommand();
-    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C: \Users\Deepak Maurya\Desktop\Appointment_Booking_System - 20191222T050711Z - 001\Appointment_Booking_System\App_Data\Database.mdf;Integrated Security=True;Connect Timeout=30");
+    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
     SqlDataAdapter sda = new SqlDataAdapter();
     DataSet ds = new DataSet();
     DataTable dt = new DataTable();
@@ -50,7 +50,7 @@ public partial class DoctorAppointments : System.Web.UI.Page
         //sda.SelectCommand = cmd;
         //sda.Fill(ds);
         //GridView1.DataSource = ds;
-            }
+    }
 
 
     protected void LinkButton1_Click(object sender, EventArgs e)

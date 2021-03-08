@@ -10,7 +10,7 @@ public partial class AdminAddDoctor : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C: \Users\Deepak Maurya\Desktop\Appointment_Booking_System - 20191222T050711Z - 001\Appointment_Booking_System\App_Data\Database.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
 
         String id = "select COUNT(*) from DoctorDetails";
         SqlCommand cmd1 = new SqlCommand(id, con);
@@ -35,7 +35,7 @@ public partial class AdminAddDoctor : System.Web.UI.Page
             else
             {
                 String id = "select last id from DoctorDetails";
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ABDULLAH\Desktop\project\catering\catering\App_Data\Database.mdf;Integrated Security=True;Connect Timeout=30");
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
                 string insert = "insert into DoctorDetails values(@id,@Name,@Password,@Specialization,@Degree,@Gender,@Age)";
                 SqlCommand cmd = new SqlCommand(insert, con);
                  cmd.Parameters.AddWithValue("@id", TextBox1.Text);

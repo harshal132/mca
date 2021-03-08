@@ -23,8 +23,8 @@ public partial class Patient_Registration : System.Web.UI.Page
             }
             else
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C: \Users\Deepak Maurya\Desktop\Appointment_Booking_System - 20191222T050711Z - 001\Appointment_Booking_System\App_Data\Database.mdf;Integrated Security=True;Connect Timeout=30");
-                string insert = "insert into Patient values(@fname,@lname,@email,@mobile,@age,@password,@Gender)";
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
+                string insert = "insert into Patient values(@fname,@lname,@password,@email,@mobile,@Gender,@age)";
                 SqlCommand cmd = new SqlCommand(insert, con);
 
                 cmd.Parameters.AddWithValue("@fname", TextBox1.Text);
@@ -33,7 +33,7 @@ public partial class Patient_Registration : System.Web.UI.Page
                 cmd.Parameters.AddWithValue("@email", TextBox4.Text);
                 cmd.Parameters.AddWithValue("@mobile", TextBox5.Text);
                 cmd.Parameters.AddWithValue("@Gender", RadioButtonList1.SelectedValue);
-                cmd.Parameters.AddWithValue("@age", TextBox6.Text);
+                cmd.Parameters.AddWithValue("@age", Convert.ToInt32(TextBox6.Text));
 
 
 

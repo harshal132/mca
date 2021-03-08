@@ -10,7 +10,7 @@ using System.Web.UI.WebControls;
 public partial class Book_Appointment : System.Web.UI.Page
 {
     SqlCommand cmd = new SqlCommand();
-    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C: \Users\Deepak Maurya\Desktop\Appointment_Booking_System - 20191222T050711Z - 001\Appointment_Booking_System\App_Data\Database.mdf;Integrated Security=True;Connect Timeout=30");
+    SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
     SqlDataAdapter sda = new SqlDataAdapter();
     DataSet ds = new DataSet();
 
@@ -50,16 +50,16 @@ public partial class Book_Appointment : System.Web.UI.Page
             }
             else
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ABDULLAH\Desktop\project\catering\catering\App_Data\Database.mdf;Integrated Security=True;Connect Timeout=30");
-                string insert = "insert into Appointment values(@id,@Name,@Password,@Specialization,@Degree,@Gender)";
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
+                string insert = "insert into Appointment values(@email_id,@category,@doctorName,@patientName,@date,@time)";
                 SqlCommand cmd = new SqlCommand(insert, con);
                 showdata();
-                cmd.Parameters.AddWithValue("@id", TextBox1.Text);
-                cmd.Parameters.AddWithValue("@Name", Category.SelectedValue);
-                cmd.Parameters.AddWithValue("@Password", DoctorName.SelectedValue);
-                cmd.Parameters.AddWithValue("@Specialization", TextBox3.Text);
-                cmd.Parameters.AddWithValue("@Degree", TextBox2.Text);
-                cmd.Parameters.AddWithValue("@Gender", Time.SelectedValue);
+                cmd.Parameters.AddWithValue("@email_id", TextBox1.Text);
+                cmd.Parameters.AddWithValue("@category", Category.SelectedValue);
+                cmd.Parameters.AddWithValue("@doctorName", DoctorName.SelectedValue);
+                cmd.Parameters.AddWithValue("@patientName", TextBox3.Text);
+                cmd.Parameters.AddWithValue("@date", TextBox2.Text);
+                cmd.Parameters.AddWithValue("@time", Time.SelectedValue);
                 
 
                 con.Open();
