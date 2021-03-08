@@ -1,3 +1,4 @@
+//refer => https://www.w3schools.com/nodejs/nodejs_filesystem.asp
 var fs=require("fs")
 //Create and Write Files
 fs.writeFile("writeFile.txt","Hi, I am writing this content through js.",function (err,data){
