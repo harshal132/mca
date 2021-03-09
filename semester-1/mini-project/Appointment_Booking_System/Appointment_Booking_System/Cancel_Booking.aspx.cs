@@ -25,7 +25,6 @@ public partial class Cancel_Booking : System.Web.UI.Page
             con.Open();
             showdata();
         }
-
     }
 
     protected void Button1_Click(object sender, EventArgs e)
@@ -45,14 +44,12 @@ public partial class Cancel_Booking : System.Web.UI.Page
         sda.SelectCommand = cmd;
         sda.Fill(ds);
         Label1.Text = ds.Tables[0].Rows[0]["EmailID"].ToString();
-
     }
 
 
     protected void LinkButton1_Click(object sender, EventArgs e)
     {
         Session.RemoveAll();
-
         Response.Redirect("Login.aspx");
     }
 }

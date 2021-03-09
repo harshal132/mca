@@ -13,16 +13,12 @@ public partial class AdminAddDoctor : System.Web.UI.Page
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
 
         String id = "select COUNT(*) from DoctorDetails";
-        SqlCommand cmd1 = new SqlCommand(id, con);
+        SqlCommand command = new SqlCommand(id, con);
         con.Open();
-        Int32 Docid=(Int32) cmd1.ExecuteScalar();
-        TextBox1.Text = (Docid +1 ).ToString();
+        Int32 docId=(Int32) command.ExecuteScalar();
+        TextBox1.Text = (docId +1 ).ToString();
         con.Close();
-
-
-
     }
-
 
     protected void Button1_Click(object sender, EventArgs e)
     {
@@ -30,16 +26,18 @@ public partial class AdminAddDoctor : System.Web.UI.Page
         {
             if (TextBox1.Text.Equals("") || TextBox2.Text.Equals("") || TextBox3.Text.Equals("") || TextBox4.Text.Equals("") || RadioButtonList1.SelectedValue.Equals(""))
             {
-                Label1.Text = "Please Enter all the details";
+                Label1.Text = "Please Enter All Details To Register!";
             }
             else
             {
                 String id = "select last id from DoctorDetails";
                 SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
-                string insert = "insert into DoctorDetails values(@id,@Name,@Password,@Specialization,@Degree,@Gender,@Age)";
+				
+                String insert = "insert into DoctorDetails values(@id,@uname,@Password,@Specialization,@Degree,@Gender,@Age)";
                 SqlCommand cmd = new SqlCommand(insert, con);
-                 cmd.Parameters.AddWithValue("@id", TextBox1.Text);
-                cmd.Parameters.AddWithValue("@Name", TextBox2.Text);
+				
+                cmd.Parameters.AddWithValue("@id", TextBox1.Text);
+                cmd.Parameters.AddWithValue("@uname", TextBox2.Text);
                 cmd.Parameters.AddWithValue("@Password", TextBox3.Text);
                 cmd.Parameters.AddWithValue("@Specialization", DropDownList1.SelectedValue);
                 cmd.Parameters.AddWithValue("@Degree", DropDownList2.SelectedValue);
@@ -54,15 +52,13 @@ public partial class AdminAddDoctor : System.Web.UI.Page
         }
         catch(Exception)
         {
-            Label1.Text = "Please Enter Valid details";
+            Label1.Text = "Please Enter Valid Details!";
         }
-
     }
 
     protected void LinkButton1_Click(object sender, EventArgs e)
     {
         Session.RemoveAll();
-
         Response.Redirect("Login.aspx");
     }
 }

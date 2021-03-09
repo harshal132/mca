@@ -14,7 +14,7 @@ public partial class Admin_Login : System.Web.UI.Page
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        if (TextBox1.Text.Equals("Admin") && TextBox2.Text.Equals("Admin"))
+        if (TextBox1.Text.Equals("admin") && TextBox2.Text.Equals("admin"))
         {
             Response.Redirect("AdminAddDoctor.aspx");
         }
@@ -33,7 +33,7 @@ public partial class Admin_Login : System.Web.UI.Page
 
     protected void LinkButton1_Click(object sender, EventArgs e)
     {
-        if (TextBox1.Equals("Admin") && TextBox2.Equals("Admin"))
+        if (TextBox1.Equals("admin") && TextBox2.Equals("admin"))
         {
             Response.Redirect("AdminAddDoctor.aspx");
         }

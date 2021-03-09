@@ -15,7 +15,6 @@ public partial class AdminViewAppointments : System.Web.UI.Page
     protected void LinkButton1_Click(object sender, EventArgs e)
     {
         Session.RemoveAll();
-
         Response.Redirect("Login.aspx");
     }
 }
