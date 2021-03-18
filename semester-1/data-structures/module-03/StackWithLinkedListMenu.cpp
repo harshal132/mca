@@ -1,20 +1,14 @@
 #include<iostream>
 using namespace std;
-//Class is created for the linked list
 class Stack_Linked {
-	//Structure is created for the node
 	struct node{
 		int info;
 		struct node *link;//A link to the next node
 	};
-	//A variable top is been declared for the structure
 	struct node *top;
-	//NODE is defined as the data type of the structure node
 	typedef struct node *NODE;
 	public:
-	//Constructer is defined for the class
 	Stack_Linked(){
-		//top pointer is initialized
 		top=NULL;
 	}
 //function declarations
@@ -49,6 +43,7 @@ void Stack_Linked::pop(){
 		delete(tmp);//freeing the popped node
 	}
 }/*End of pop()*/
+
 //This is to display all the element in the stack
 void Stack_Linked::display() {
 	if(top==NULL)//Checking whether the stack is empty or not
@@ -68,7 +63,7 @@ int main() {
 	int choice;
 	char opt;
 	do{
-		//The menu options are listed below
+		//##MENU##
 		cout<<"\n\t1.PUSH";
 		cout<<"\n\t2.POP";
 		cout<<"\n\t3.DISPLAY";
@@ -89,9 +84,9 @@ int main() {
 				exit(1);
 			default:
 				cout<<"\nWrong choice\n";
-		}/*End of switch */
+		}
 		cout<<"\n\nDo you want to continue (Y/y) = ";
 		cin>>opt;
 	}while((opt == 'Y') || (opt == 'y'));
-}/*End of main() */
+}
 
