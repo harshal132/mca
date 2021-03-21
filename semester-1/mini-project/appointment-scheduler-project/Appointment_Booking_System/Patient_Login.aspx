@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title></title>
+    <title>User Login</title>
 <link href="LoginStyleSheet.css" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">

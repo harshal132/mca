@@ -4,12 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" style="background-image:url('images/hospital.jpg');background-repeat:no-repeat; background-size:100% 100%; height:700px;background-attachment:fixed">
 <head runat="server">
-    <title></title>
-<link href="LoginStyleSheet.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Login Page</title>
+    <link href="LoginStyleSheet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   
 </head>
 

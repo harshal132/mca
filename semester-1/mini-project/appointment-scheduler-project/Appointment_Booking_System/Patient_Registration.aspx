@@ -4,9 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" style="background-image:url('images/hospital.jpg');background-repeat:no-repeat; background-size:100% 100%; height:700px;background-attachment:fixed">
 <head runat="server">
-    <title></title>
+    <title>Registration Page</title>
 <style>
-            body {
+    body {
         background-color: #F3EBF6;
         font-family: 'Ubuntu', sans-serif;
     }
