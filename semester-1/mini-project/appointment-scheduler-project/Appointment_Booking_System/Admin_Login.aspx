@@ -12,10 +12,10 @@
         }
     </style>
     <link href="LoginStyleSheet.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css" />
   
 </head>
 
@@ -26,14 +26,11 @@
     
         <asp:TextBox ID="TextBox1" runat="server" CssClass="un" placeholder="Username"></asp:TextBox>
         <asp:TextBox ID="TextBox2" runat="server" class =" pass" placeholder="Password" Type="password"></asp:TextBox>
-      <asp:Button ID="Button1" runat="server" Text="Login" class ="submit" OnClick="Button1_Click" />
-     
-      <asp:Label ID="Label1" runat="server" ForeColor="Red" ></asp:Label>
-      
-      
-      
-            
-                
+      <asp:Button ID="Button1" runat="server" Text="Login" class ="submit" OnClick="loginButton" />
+     <br />
+      <br />
+      <asp:Label ID="Label1" runat="server" ForeColor="Red" style="text-align:center; margin-left:22%"></asp:Label>
+           
     </div>
      </form>
 </body>

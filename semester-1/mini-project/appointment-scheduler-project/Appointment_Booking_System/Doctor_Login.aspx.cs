@@ -20,10 +20,6 @@ public partial class Doctor_Login : System.Web.UI.Page
         {
             Response.Redirect("DoctorDetails.aspx");
         }
-        else
-        {
-           // con.Open();
-        }
     }
 
     protected void Button1_Click(object sender, EventArgs e)
@@ -38,7 +34,9 @@ public partial class Doctor_Login : System.Web.UI.Page
         {
             Session["User"] = user;
             Response.Redirect("DoctorDetails.aspx");
-           // Response.Redirect("DoctorAppointments.aspx");
+        }
+        else {
+            Label1.Text = "Invalid Credentials Please Try Again!";
         }
     }
 }

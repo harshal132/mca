@@ -105,46 +105,47 @@
         color: #E1BEE7;
         text-decoration: none
     }
-    
+
     @media (max-width: 600px) {
         .main {
             border-radius: 0px;
         }
-        
-        
+    }  
 
 
 
-</style>
-<link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    </style>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"/>
   
 </head>
 
 <body style="background-image:url('images/hospital.jpg');background-repeat:no-repeat; background-size:100% 100%; height:700px;background-attachment:fixed">
     <form runat="server">
-  <div class="main">
-    <p class="sign" align="center">Registration</p>
+        <div class="main">
+        <p class="sign" align="center">Registration</p>
     
-        <asp:TextBox ID="TextBox1" runat="server" CssClass="un" placeholder="FirstName"></asp:TextBox>
-      <asp:TextBox ID="TextBox3" runat="server" CssClass="un" placeholder="LastName"></asp:TextBox>
-      <asp:TextBox ID="TextBox4" runat="server" CssClass="un" placeholder="Email ID"></asp:TextBox>
-      <asp:TextBox ID="TextBox5" runat="server" CssClass="un" placeholder="Mobile Number"></asp:TextBox>
-    
-      <asp:TextBox ID="TextBox6" runat="server" CssClass="un" placeholder="Age"></asp:TextBox>
-        <asp:TextBox ID="TextBox2" runat="server" class =" pass" placeholder="Password"></asp:TextBox>
-      <p style="text-align:center"> Gender <asp:RadioButtonList ID="RadioButtonList1" runat="server" CssClass="un">
-        <asp:ListItem Selected="True">Male</asp:ListItem>
-        <asp:ListItem>Female</asp:ListItem>
-        </asp:RadioButtonList></p>
+          <asp:TextBox ID="TextBox1" runat="server" CssClass="un" placeholder="FirstName" required="required" MaxLength="8"></asp:TextBox>
+          <asp:TextBox ID="TextBox3" runat="server" CssClass="un" placeholder="LastName" required="required"  MaxLength="8"></asp:TextBox>
+          <asp:TextBox ID="TextBox4" runat="server" CssClass="un" placeholder="Email ID" TextMode="Email" required="required"></asp:TextBox>
+          <asp:TextBox ID="TextBox5" runat="server" CssClass="un" placeholder="Mobile Number" TextMode="Phone" required="required" MaxLength="10"></asp:TextBox>
+            
+          <asp:TextBox ID="TextBox6" runat="server" CssClass="un" placeholder="Age" required="required" MaxLength="2"></asp:TextBox>
+          <asp:TextBox ID="TextBox2" runat="server" class =" pass" placeholder="Password" TextMode="Password" required="required" MaxLength="8"></asp:TextBox>
 
-      <asp:Button ID="Button1" runat="server" Text="Register" class ="submit" OnClick="Button1_Click"/>
-      <p class="forgot" align="center">Have an account<a href="Patient_Login.aspx">Login </a>here</p>
-      <asp:Label ID="Label1" runat="server"></asp:Label>
-      </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+          <p style="text-align:center"> Gender <asp:RadioButtonList ID="RadioButtonList1" runat="server" CssClass="un">
+            <asp:ListItem>Male</asp:ListItem>
+            <asp:ListItem style="margin-left:19px">Female</asp:ListItem>
+            </asp:RadioButtonList></p>
+
+          <asp:Button ID="Button1" runat="server" Text="Register" class ="submit" OnClick="registerUser"/>
+          <p class="forgot" align="center">Have an account<a href="Patient_Login.aspx">Login </a>here</p>
+          <br />
+          <asp:Label ID="Label1" runat="server" ForeColor="ForestGreen" style="text-align:center; margin-left:22%; font:bold"></asp:Label>
+          </div>
+          
     </form>
 </body>
 </html>

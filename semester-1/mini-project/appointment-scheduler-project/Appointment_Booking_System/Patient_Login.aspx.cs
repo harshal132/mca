@@ -15,21 +15,13 @@ public partial class Patient_Login : System.Web.UI.Page
     DataSet ds = new DataSet();
     
 
-    protected void Page_Load(object sender, EventArgs e)
-    {
-        
-        if (Session["user"] != null)
-        {
+    protected void Page_Load(object sender, EventArgs e) {  
+        if (Session["user"] != null) {
             Response.Redirect("Book_Appointment.aspx");
-        }
-        else
-        {
-            //con.Open();
         }
     }
 
-    protected void Button1_Click(object sender, EventArgs e)
-    {
+    protected void patientLogin(object sender, EventArgs e) {
         Session.RemoveAll();
         con.Open();
         String user = TextBox1.Text.Trim();
@@ -37,11 +29,13 @@ public partial class Patient_Login : System.Web.UI.Page
         cmd.Connection = con;
         sda.SelectCommand = cmd;
         sda.Fill(ds, "Patient");
-        if (ds.Tables[0].Rows.Count > 0)
-        {
+        if (ds.Tables[0].Rows.Count > 0) {
             Session["User"] = user;
             Response.Redirect("Book_Appointment.aspx");
             // Response.Redirect("DoctorAppointments.aspx");
+        }
+        else {
+            Label1.Text = "Invalid Credentials Please Try Again!";
         }
 
     }

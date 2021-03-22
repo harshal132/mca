@@ -21,7 +21,9 @@
         <asp:TextBox ID="TextBox1" runat="server" CssClass="un" placeholder="Username"></asp:TextBox>
         <asp:TextBox ID="TextBox2" runat="server" class =" pass" placeholder="Password" Type="password"></asp:TextBox>
       <asp:Button ID="Button1" runat="server" Text="Login" class ="submit" OnClick="Button1_Click"/>
-      
+      <br />
+      <br />
+      <asp:Label ID="Label1" runat="server" ForeColor="Red" style="text-align:center; margin-left:22%"></asp:Label>
       
       
             
