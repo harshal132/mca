@@ -10,17 +10,43 @@ public partial class AdminAddDoctor : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
-
-        String id = "select COUNT(*) from DoctorDetails";
-        SqlCommand command = new SqlCommand(id, con);
-        con.Open();
-        Int32 docId=(Int32) command.ExecuteScalar();
-        TextBox1.Text = (docId +1 ).ToString();
-        con.Close();
+        TextBox1.Text = generateDoctorID().ToString();
+    }
+    public int generateDoctorID() {
+        Random generator = new Random();
+        String r = generator.Next(0, 1000000).ToString("D6");
+        int random = Convert.ToInt32(r);
+        if (!checkIfAlreadyUsed(random))
+        {
+            return random;
+        }
+        else {
+            random = generateDoctorID();
+            return random;
+        }  
     }
 
-    protected void Button1_Click(object sender, EventArgs e)
+    public Boolean checkIfAlreadyUsed(int random) {
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
+        con.Open();
+        string query = "select COUNT(*) from DoctorDetails where Id ="+random+";";
+        using (var cmd = new SqlCommand(query, con))
+        {
+            int rowsAmount = (int)cmd.ExecuteScalar(); // get the value of the count
+            if (rowsAmount > 0)
+            {
+                con.Close();
+                return true;
+            }
+            else
+            {
+                con.Close();
+                return false;
+            }
+        }
+    }
+
+    protected void registerDoctor(object sender, EventArgs e)
     {
         try
         {

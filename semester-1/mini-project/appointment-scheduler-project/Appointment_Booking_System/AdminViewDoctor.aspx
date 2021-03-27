@@ -14,10 +14,14 @@
             text-align:right;
             width: 278px;
         }
+        .alignData {
+            margin-left:auto;
+            margin-right:auto;
+        }
     </style>
-<link rel="stylesheet" href="styles.css">
-   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-   <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="script.js"></script>
  
 </head>
 <body style="text-align:center ; background-image:url('images/hospital.jpg');background-repeat:no-repeat; background-size:100% 100%; height:700px;background-attachment:fixed">
@@ -37,12 +41,11 @@
     
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [DoctorDetails]"></asp:SqlDataSource>
         <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="115px" Width="870px">
+        <asp:GridView ID="GridView1" class="alignData" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="170px" Width="924px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-                <asp:BoundField DataField="Password" HeaderText="Password" SortExpression="Password" />
                 <asp:BoundField DataField="Specialization" HeaderText="Specialization" SortExpression="Specialization" />
                 <asp:BoundField DataField="Degree" HeaderText="Degree" SortExpression="Degree" />
                 <asp:BoundField DataField="Gender" HeaderText="Gender" SortExpression="Gender" />

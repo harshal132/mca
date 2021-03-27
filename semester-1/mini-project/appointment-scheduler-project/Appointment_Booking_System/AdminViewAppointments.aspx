@@ -14,6 +14,10 @@
             text-align:right;
             width: 278px;
         }
+        .alignData {
+            margin-left:auto;
+            margin-right:auto;
+        }
     </style>
 <link rel="stylesheet" href="styles.css">
    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -35,12 +39,12 @@
     
     <div>
     <h1 style="color:white ; background-color:black">Appointments </h1>
-        <asp:GridView ID="GridView1" runat="server" Height="170px" Width="924px" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="EmailID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
+        <asp:GridView ID="GridView1" class="alignData" runat="server" Height="170px" Width="924px" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="EmailID" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="EmailID" HeaderText="EmailID" ReadOnly="True" SortExpression="EmailID" />
                 <asp:BoundField DataField="Category" HeaderText="Category" SortExpression="Category" />
-                <asp:BoundField DataField="Doctor_Name" HeaderText="Doctor_Name" SortExpression="Doctor_Name" />
+                <asp:BoundField DataField="Doctor_Name" HeaderText="Doctor Name" SortExpression="Doctor_Name" />
                 <asp:BoundField DataField="Patient Name" HeaderText="Patient Name" SortExpression="Patient Name" />
                 <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
                 <asp:BoundField DataField="Time" HeaderText="Time" SortExpression="Time" />
