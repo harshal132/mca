@@ -127,13 +127,13 @@
         <div class="main">
         <p class="sign" align="center">Registration</p>
     
-          <asp:TextBox ID="TextBox1" runat="server" CssClass="un" placeholder="FirstName" required="required" MaxLength="8"></asp:TextBox>
-          <asp:TextBox ID="TextBox3" runat="server" CssClass="un" placeholder="LastName" required="required"  MaxLength="8"></asp:TextBox>
+          <asp:TextBox ID="TextBox1" runat="server" CssClass="un" placeholder="FirstName" required="required" MaxLength="15"></asp:TextBox>
+          <asp:TextBox ID="TextBox3" runat="server" CssClass="un" placeholder="LastName" required="required"  MaxLength="15"></asp:TextBox>
           <asp:TextBox ID="TextBox4" runat="server" CssClass="un" placeholder="Email ID" TextMode="Email" required="required"></asp:TextBox>
           <asp:TextBox ID="TextBox5" runat="server" CssClass="un" placeholder="Mobile Number" TextMode="Phone" required="required" MaxLength="10"></asp:TextBox>
             
           <asp:TextBox ID="TextBox6" runat="server" CssClass="un" placeholder="Age" required="required" MaxLength="2"></asp:TextBox>
-          <asp:TextBox ID="TextBox2" runat="server" class =" pass" placeholder="Password" TextMode="Password" required="required" MaxLength="8"></asp:TextBox>
+          <asp:TextBox ID="TextBox2" runat="server" class =" pass" placeholder="Password" TextMode="Password" required="required" MaxLength="15"></asp:TextBox>
 
           <p style="text-align:center"> Gender <asp:RadioButtonList ID="RadioButtonList1" runat="server" CssClass="un">
             <asp:ListItem>Male</asp:ListItem>

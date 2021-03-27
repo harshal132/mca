@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Data;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 public partial class Patient_Registration : System.Web.UI.Page
 {
@@ -17,8 +19,7 @@ public partial class Patient_Registration : System.Web.UI.Page
     protected void registerUser(object sender, EventArgs e)
     {
         int result = 0;
-        result = validateMobileNumber();
-        result = validateName();
+        result = validateMobileNumber(); //0
         if (result == 0)
         {
             Label1.ForeColor = System.Drawing.Color.Red;
@@ -44,7 +45,7 @@ public partial class Patient_Registration : System.Web.UI.Page
         Match matchMobile = regMobile.Match(TextBox5.Text);
         if (matchMobile.Success)
         {
-            result = 1;
+            result = validateName();
         }
         else
         {
@@ -55,7 +56,7 @@ public partial class Patient_Registration : System.Web.UI.Page
 
     public int validateName() {
         int result = 0;
-        Regex regName = new Regex("[a-zA-Z]{8}");
+        Regex regName = new Regex("[a-zA-Z]{3}");
         Match matchFirstName = regName.Match(TextBox1.Text);
         if (matchFirstName.Success)
         {
@@ -74,20 +75,53 @@ public partial class Patient_Registration : System.Web.UI.Page
         }
         return result;
     }
+    public Boolean checkIfAlreadyRegistered() {
+        SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
+        con.Open();
+        string query = "select COUNT(*) from Patient where EmailID ='" + TextBox4.Text + "'";
+
+        using (var cmd = new SqlCommand(query, con))
+        {
+            int rowsAmount = (int)cmd.ExecuteScalar(); // get the value of the count
+            if (rowsAmount > 0)
+            {
+                con.Close();
+                return true;
+            }
+            else
+            {
+                con.Close();
+                return false;
+            }
+        }
+
+    }
+
+    public void displayMessage(String message) {
+        Type cstype = this.GetType();
+
+        // Get a ClientScriptManager reference from the Page class.
+        ClientScriptManager cs = Page.ClientScript;
+
+        // Check to see if the startup script is already registered.
+        if (!cs.IsStartupScriptRegistered(cstype, "PopupScript"))
+        {
+            String cstext = "alert('" + message + "');";
+            cs.RegisterStartupScript(cstype, "PopupScript", cstext, true);
+        }
+    }
     public void storeDetails()
     {
         try
         {
-            if (TextBox1.Text.Equals("") || TextBox2.Text.Equals("") || TextBox3.Text.Equals("") || TextBox4.Text.Equals("") || TextBox5.Text.Equals("") || TextBox6.Text.Equals(""))
-            {
-                Label1.Text = "Please Enter All The Details For Registration";
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
+            string insert = "insert into Patient values(@fname,@lname,@password,@email,@mobile,@Gender,@age)";
+            SqlCommand cmd = new SqlCommand(insert, con);
+            if (checkIfAlreadyRegistered()){
+                Label1.ForeColor = System.Drawing.Color.Red;
+                Label1.Text = "User Already Registered with Given Email ID!";
             }
-            else
-            {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
-                string insert = "insert into Patient values(@fname,@lname,@password,@email,@mobile,@Gender,@age)";
-                SqlCommand cmd = new SqlCommand(insert, con);
-
+            else {
                 cmd.Parameters.AddWithValue("@fname", TextBox1.Text);
                 cmd.Parameters.AddWithValue("@lname", TextBox3.Text);
                 cmd.Parameters.AddWithValue("@Password", TextBox2.Text);
@@ -99,9 +133,15 @@ public partial class Patient_Registration : System.Web.UI.Page
                 clearRecords();
                 con.Open();
                 cmd.ExecuteNonQuery();
-                Label1.Text = "Record Inserted Successfully.";
+                //Response.Write("<script>alert('Data inserted successfully')</script>"); // Show Alert Box for Record Inserted Succefully!
+                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
+                //Page.ClientScript.RegisterClientScriptBlock(Page.GetType(), "scripts", "<script>alert('Data inserted successfully');</script>");
+                displayMessage("User Registered Successfully!");
                 con.Close();
-            }
+
+                Thread.Sleep(5000);
+                Response.Redirect("Patient_Login.aspx");
+            }  
         }
         catch (Exception)
         {
