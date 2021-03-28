@@ -13,15 +13,17 @@
   
 </head>
 
-<body style="background-image:url('images/hospital.jpg');background-repeat:no-repeat; background-size:100% 100%; height:700px;background-attachment:fixed">
-    <form runat="server" style="align-content:center">
+<body style="background-image:url('images/hospital.jpg');background-repeat:no-repeat;background-size:100% 100%; height:700px;background-attachment:fixed">
+    <form runat="server" style="align-content:center;">
   
     <br /><br /><br /><br />
         <p class="sign" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose Your login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </p>
     
-        <asp:Button ID="Button1" align="center" runat="server" Text="PATIENT LOGIN" Font-Size="Larger" class="submit" OnClick="Button1_Click" Height="90" Width="350" /><br /><br />
+        <asp:Button ID="Button1" align="center" runat="server" Text="PATIENT LOGIN" Font-Size="Larger" class="submit"  OnClick="Button1_Click" Height="90" Width="350" /><br /><br />
+
+        
 
         <asp:Button ID="Button2" align="center" runat="server" Text="DOCTOR LOGIN" Font-Size="Larger" class="submit" OnClick="Button2_Click" Height="90" Width="350" /><br /><br />
 

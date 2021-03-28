@@ -51,9 +51,15 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>Doctor Name</td>
+                    <td>Email ID</td>
                     <td>
                         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Doctor Name</td>
+                    <td>
+                        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

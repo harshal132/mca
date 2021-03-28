@@ -26,7 +26,7 @@ public partial class Doctor_Login : System.Web.UI.Page
     {
         con.Open();
         String user = TextBox1.Text.Trim();
-        cmd.CommandText = "select * from DoctorDetails where Name ='" + TextBox1.Text + "' and Password ='" + TextBox2.Text + "'";
+        cmd.CommandText = "select * from DoctorDetails where EmailID ='" + TextBox1.Text + "' and Password ='" + TextBox2.Text + "'";
         cmd.Connection = con;
         sda.SelectCommand = cmd;
         sda.Fill(ds, "DoctorDetails");

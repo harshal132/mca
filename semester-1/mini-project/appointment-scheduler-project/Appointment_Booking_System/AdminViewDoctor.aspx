@@ -39,12 +39,13 @@
     
     <div>
     
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [DoctorDetails]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Id], [EmailID], [Name], [Specialization], [Degree], [Gender], [Age] FROM [DoctorDetails]"></asp:SqlDataSource>
         <br />
         <asp:GridView ID="GridView1" class="alignData" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="170px" Width="924px">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
                 <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" />
+                <asp:BoundField DataField="EmailID" HeaderText="EmailID" SortExpression="EmailID" />
                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                 <asp:BoundField DataField="Specialization" HeaderText="Specialization" SortExpression="Specialization" />
                 <asp:BoundField DataField="Degree" HeaderText="Degree" SortExpression="Degree" />

@@ -31,12 +31,13 @@ public partial class DoctorAppointments : System.Web.UI.Page
     }
     public void showdata()
     {
-        cmd.CommandText = "select * from DoctorDetails where Name ='" + Session["user"] + "'";
+        cmd.CommandText = "select * from DoctorDetails where EmailID ='" + Session["user"] + "'";
         cmd.Connection = con;
         sda.SelectCommand = cmd;
         sda.Fill(ds);
-        Label1.Text = ds.Tables[0].Rows[0]["Name"].ToString();
-        sda = new SqlDataAdapter("select * from Appointment where Doctor_Name='" + Session["user"] + "'", con);
+        Label1.Text = ds.Tables[0].Rows[0]["EmailID"].ToString();
+        Label2.Text = ds.Tables[0].Rows[0]["Name"].ToString();
+        sda = new SqlDataAdapter("select * from Appointment where Doctor_Name='" + Label2.Text + "'", con);
         dt = new DataTable();
         sda.Fill(dt);
         GridView1.DataSource = dt;

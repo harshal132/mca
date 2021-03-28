@@ -59,16 +59,18 @@ public partial class AdminAddDoctor : System.Web.UI.Page
                 String id = "select last id from DoctorDetails";
                 SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
 				
-                String insert = "insert into DoctorDetails values(@id,@uname,@Password,@Specialization,@Degree,@Gender,@Age)";
+                String insert = "insert into DoctorDetails values(@id,@uname,@name,@Password,@Specialization,@Degree,@Gender,@Age)";
                 SqlCommand cmd = new SqlCommand(insert, con);
 				
                 cmd.Parameters.AddWithValue("@id", TextBox1.Text);
                 cmd.Parameters.AddWithValue("@uname", TextBox2.Text);
+                cmd.Parameters.AddWithValue("@name", TextBox5.Text);
                 cmd.Parameters.AddWithValue("@Password", TextBox3.Text);
                 cmd.Parameters.AddWithValue("@Specialization", DropDownList1.SelectedValue);
                 cmd.Parameters.AddWithValue("@Degree", DropDownList2.SelectedValue);
                 cmd.Parameters.AddWithValue("@Gender", RadioButtonList1.SelectedValue);
                 cmd.Parameters.AddWithValue("@Age", TextBox4.Text);
+                
 
                 con.Open();
                 cmd.ExecuteNonQuery();

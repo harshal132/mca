@@ -29,7 +29,7 @@ public partial class DoctorDetails : System.Web.UI.Page
     }
     public void showdata()
     {
-        cmd.CommandText = "select * from DoctorDetails where Name ='" + Session["user"]+"'";
+        cmd.CommandText = "select * from DoctorDetails where EmailID ='" + Session["user"]+"'";
         cmd.Connection = con;
         sda.SelectCommand = cmd;
         sda.Fill(ds);

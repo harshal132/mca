@@ -139,7 +139,7 @@ public partial class Patient_Registration : System.Web.UI.Page
                 displayMessage("User Registered Successfully!");
                 con.Close();
 
-                Thread.Sleep(5000);
+                //Thread.Sleep(5000);
                 Response.Redirect("Patient_Login.aspx");
             }  
         }

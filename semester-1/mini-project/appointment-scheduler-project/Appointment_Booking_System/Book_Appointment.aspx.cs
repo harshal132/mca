@@ -126,4 +126,13 @@ public partial class Book_Appointment : System.Web.UI.Page
         Calendar1.Visible = false;
 
     }
+
+    protected void Calendar1_DayRender(object sender, DayRenderEventArgs e)
+    {
+        if (e.Day.Date.CompareTo(DateTime.Today) < 0)
+        {
+            e.Day.IsSelectable = false;
+            e.Cell.ForeColor = System.Drawing.Color.Gray;
+        }
+    }
 }

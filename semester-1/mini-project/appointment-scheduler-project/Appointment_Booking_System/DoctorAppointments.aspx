@@ -36,9 +36,15 @@
     </div>
        <table class="auto-style1">
            <tr>
-               <td class="auto-style2">Doctor Name</td>
+               <td class="auto-style2">Email ID</td>
                <td>
                    <asp:Label ID="Label1" runat="server"></asp:Label>
+               </td>
+           </tr>
+           <tr>
+               <td class="auto-style2">Doctor Name</td>
+               <td>
+                   <asp:Label ID="Label2" runat="server"></asp:Label>
                </td>
            </tr>
            <tr>

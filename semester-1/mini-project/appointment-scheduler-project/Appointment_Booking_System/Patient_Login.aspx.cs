@@ -15,7 +15,8 @@ public partial class Patient_Login : System.Web.UI.Page
     DataSet ds = new DataSet();
     
 
-    protected void Page_Load(object sender, EventArgs e) {  
+    protected void Page_Load(object sender, EventArgs e) {
+        Session.RemoveAll();
         if (Session["user"] != null) {
             Response.Redirect("Book_Appointment.aspx");
         }
