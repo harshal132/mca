@@ -1,0 +1,14 @@
+{
+  "name": "module-04",
+  "version": "1.0.0",
+  "description": "scripts related to module-04",
+  "main": "mysqlConnect.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harshal Chavan",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
