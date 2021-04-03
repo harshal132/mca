@@ -18,18 +18,6 @@
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-    <style>
-        .dropdown .dropbtn {
-              font-size: 16px;  
-              border: none;
-              outline: none;
-              color: white;
-              padding: 14px 16px;
-              background-color: inherit;
-              font-family: inherit;
-              margin: 0;
-        }
-    </style>
 
 </head>
 <body>
@@ -61,7 +49,8 @@
 					    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					      
 					      <ul class="nav navbar-nav navbar-right">
-					        <li><a class="dropbtn" href="Login.aspx" >Login</a></li>
+					        <li><a class="menu" href="Login.aspx" >Login</a>
+					        </li>
 					        <li><a class="menu" href="#about">about us</a></li>
 					        <li><a class="menu" href="#service">our services </a></li>
 					        <li><a class="menu" href="#team">our team</a></li>
@@ -248,14 +237,14 @@
 					</div>
 					<div class="person-detail">
 						<div class="arrow-bottom"></div>
-						<h3>Dr. M. Weiner, M.D.</h3>
+						<h3>Dr. Abdullah Mulchandani M.D.</h3>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
 					</div>
 				</div>
 				<div class="col-md-2 single-member col-sm-4">
 					<div class="person-detail">
 						<div class="arrow-top"></div>
-						<h3>Dr. Danielle, M.D.</h3>
+						<h3>Dr. Dipti Maurya, M.D.</h3>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
 					</div>
 					<div class="person">
@@ -268,14 +257,14 @@
 					</div>
 					<div class="person-detail">
 						<div class="arrow-bottom"></div>
-						<h3>Dr. Caitlin, M.D.</h3>
+						<h3>Dr. Deepak Saxena, M.D.</h3>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
 					</div>
 				</div>
 				<div class="col-md-2 single-member col-sm-4">
 					<div class="person-detail">
 						<div class="arrow-top"></div>
-						<h3>Dr. Joseph, M.D.</h3>
+						<h3>Dr. Anagha Shaikh, M.D.</h3>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
 					</div>
 					<div class="person">
@@ -288,14 +277,14 @@
 					</div>
 					<div class="person-detail">
 						<div class="arrow-bottom"></div>
-						<h3>Dr. Michael, M.D.</h3>
+						<h3>Dr. Kanagraj Dongre, M.D.</h3>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
 					</div>
 				</div>
 				<div class="col-md-2 single-member col-sm-4">
 					<div class="person-detail">
 						<div class="arrow-top"></div>
-						<h3>Dr. Hasina, M.D.</h3>
+						<h3>Dr. Vidisha Jadhav, M.D.</h3>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </p>
 					</div>
 					<div class="person">
@@ -327,10 +316,10 @@
 						<h3>contact information</h3>
 						<div class="info-detail">
 							<ul><li><i class="fa fa-calendar"></i><span>Monday - Friday:</span> 9:30 AM to 6:30 PM</li></ul>
-							<ul><li><i class="fa fa-map-marker"></i><span>Address:</span> 123 Some Street , London, UK, CP 123&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li></ul>
+							<ul><li><i class="fa fa-map-marker"></i><span>Address:</span> 1472, Anand Nagar CHS , Thane, IN, 400603&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </li></ul>
 							<ul><li><i class="fa fa-phone"></i><span>Phone:</span> (032) 987-1235</li></ul>
 							<ul><li><i class="fa fa-fax"></i><span>Fax:</span> (123) 984-1234</li></ul>
-							<ul><li><i class="fa fa-envelope"></i><span>Email:</span> info@doctor.com</li></ul>
+							<ul><li><i class="fa fa-envelope"></i><span>Email:</span> harshalchavan116@gmail.com</li></ul>
 						</div>
 					</div>
 					

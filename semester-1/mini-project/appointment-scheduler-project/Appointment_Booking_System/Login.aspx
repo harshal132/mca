@@ -10,6 +10,24 @@
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"/>
+
+    <style>
+        .submit {
+        cursor: pointer;
+        border-radius: 5em;
+        color: #fff;
+        background: #3b7be3;
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: 'Ubuntu', sans-serif;
+        margin-left: 35%;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+    </style>
   
 </head>
 
@@ -17,7 +35,8 @@
     <form runat="server" style="align-content:center;">
   
     <br /><br /><br /><br />
-        <p class="sign" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose Your login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <p class="sign" align="center"
+            style="margin-left:65px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choose Your login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </p>
     

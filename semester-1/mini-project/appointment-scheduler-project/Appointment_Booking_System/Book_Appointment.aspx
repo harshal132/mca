@@ -15,7 +15,7 @@
             width: 278px;
         }
     </style>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css"/>
    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
    <script src="script.js"></script>
  
@@ -45,25 +45,25 @@
             <tr>
                 <td class="auto-style2">Email ID</td>
                 <td>
-                    <asp:TextBox ID="TextBox1" runat="server" Height="38px" Width="232px"></asp:TextBox>
+                    <asp:TextBox ID="TextBox1" runat="server" Height="38px" Width="232px" ReadOnly="true"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Category</td>
                 <td>
-                    <asp:DropDownList ID="Category" runat="server" Height="63px" Width="233px">
-                        <asp:ListItem>Bone</asp:ListItem>
-                        <asp:ListItem>Heart</asp:ListItem>
-                        <asp:ListItem>Dentist</asp:ListItem>
-                        <asp:ListItem>Neurologist</asp:ListItem>
-                        <asp:ListItem>Kidney</asp:ListItem>
+                    <asp:DropDownList ID="Category" AutoPostBack="true" runat="server" Height="63px" Width="233px" OnSelectedIndexChanged="updateDoctorName">
+                        <asp:ListItem Text="Bone" Value="1"></asp:ListItem>
+                        <asp:ListItem Text="Heart" Value="2">Heart</asp:ListItem>
+                        <asp:ListItem Text="Dentist" Value="3"></asp:ListItem>
+                        <asp:ListItem Text="Neurologist" Value="4"></asp:ListItem>
+                        <asp:ListItem Text="Kidney" Value="5"></asp:ListItem>
                     </asp:DropDownList>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">Doctor Name</td>
                 <td>
-                    <asp:DropDownList ID="DoctorName" runat="server" Height="38px" Width="232px" DataSourceID="SqlDataSource2" DataTextField="Name" DataValueField="Name"></asp:DropDownList>
+                    <asp:DropDownList ID="DoctorName" runat="server" Height="38px" Width="232px" DataTextField="Name" DataValueField="Name"></asp:DropDownList>
                 </td>
             </tr>
              <tr>
@@ -123,4 +123,5 @@
         
     </form>
 &nbsp;
+    </body>
 </html>

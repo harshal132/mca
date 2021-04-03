@@ -82,7 +82,7 @@
       cursor: pointer;
         border-radius: 5em;
         color: #fff;
-        background: linear-gradient(to right, #9C27B0, #E040FB);
+        background: #3b7be3;
         border: 0;
         padding-left: 40px;
         padding-right: 40px;
@@ -137,7 +137,7 @@
 
           <p style="text-align:center"> Gender <asp:RadioButtonList ID="RadioButtonList1" runat="server" CssClass="un">
             <asp:ListItem>Male</asp:ListItem>
-            <asp:ListItem style="margin-left:19px">Female</asp:ListItem>
+            <asp:ListItem style="margin-left:17px">Female</asp:ListItem>
             </asp:RadioButtonList></p>
 
           <asp:Button ID="Button1" runat="server" Text="Register" class ="submit" OnClick="registerUser"/>

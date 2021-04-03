@@ -7,7 +7,7 @@
     <title>Add Doctors</title>
     <style type="text/css">
         .auto-style3 {
-            background-color:#00FA9A;
+            background-color:#3b7be3;
             width: 44%;
             height: 498px;
             margin-left:auto;

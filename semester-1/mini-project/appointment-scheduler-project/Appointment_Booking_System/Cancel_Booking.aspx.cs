@@ -14,6 +14,20 @@ public partial class Cancel_Booking : System.Web.UI.Page
     SqlDataAdapter sda = new SqlDataAdapter();
     DataSet ds = new DataSet();
 
+
+    public void showMessage(String message) {
+        Type cstype = this.GetType();
+
+        // Get a ClientScriptManager reference from the Page class.
+        ClientScriptManager cs = Page.ClientScript;
+
+        // Check to see if the startup script is already registered.
+        if (!cs.IsStartupScriptRegistered(cstype, "PopupScript"))
+        {
+            String cstext = "alert('"+message+"');";
+            cs.RegisterStartupScript(cstype, "PopupScript", cstext, true);
+        }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["user"] == null)
@@ -34,6 +48,7 @@ public partial class Cancel_Booking : System.Web.UI.Page
         cmd.Connection = con;
         sda.SelectCommand = cmd;
         sda.Fill(ds);
+        showMessage("Your Appointment is cancelled!");
         Session.Remove("EmailID");
 
     }

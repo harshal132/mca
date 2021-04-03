@@ -133,9 +133,6 @@ public partial class Patient_Registration : System.Web.UI.Page
                 clearRecords();
                 con.Open();
                 cmd.ExecuteNonQuery();
-                //Response.Write("<script>alert('Data inserted successfully')</script>"); // Show Alert Box for Record Inserted Succefully!
-                //ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Record Inserted Successfully')", true);
-                //Page.ClientScript.RegisterClientScriptBlock(Page.GetType(), "scripts", "<script>alert('Data inserted successfully');</script>");
                 displayMessage("User Registered Successfully!");
                 con.Close();
 
