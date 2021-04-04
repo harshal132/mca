@@ -56,7 +56,6 @@ public partial class AdminAddDoctor : System.Web.UI.Page
             }
             else
             {
-                String id = "select last id from DoctorDetails";
                 SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
 				
                 String insert = "insert into DoctorDetails values(@id,@uname,@name,@Password,@Specialization,@Degree,@Gender,@Age)";

@@ -53,7 +53,7 @@
                 <tr>
                     <td>Email ID</td>
                     <td>
-                        <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server" TextMode="Email"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -65,7 +65,7 @@
                 <tr>
                     <td>Set Password</td>
                     <td>
-                        <asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox3" runat="server" TextMode="Password"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
@@ -110,6 +110,9 @@
                 <tr>
                     <td colspan="2">
                         <asp:Button ID="Button1" runat="server" Text="Add Doctor" OnClick="registerDoctor" /></td>
+                    <td colspan="2">
+                         </tr>
+                <tr>
                     <td colspan="2">
             <asp:Label ID="Label1" runat="server"></asp:Label>
                     </td>

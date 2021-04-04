@@ -7,8 +7,16 @@
     <title>Book Appointment</title>
     <style type="text/css">
         .auto-style1 {
-            width: 49%;
+            background-color:#3b7be3;
+            width: 45%;
             height: 584px;
+            margin-left:auto;
+            margin-right:auto;
+            border-top:double;
+            border-bottom:double;
+            border-left:double;
+            border-right:double;
+            border-color:black;
         }
         .auto-style2 {
             text-align:right;
@@ -22,7 +30,7 @@
 </head>
 <body style="text-align:center ; background-image:url('images/hospital.jpg');background-repeat:no-repeat; background-size:100% 100%; height:700px;background-attachment:fixed">
 
- <form id="form1" runat="server" >
+<form id="form1" runat="server" style="margin-left:auto; margin-right:auto;" >
 <div id='cssmenu'>
 <ul>
    <li><a href="Book_Appointment.aspx">Book Appointment</a></li>
@@ -76,7 +84,7 @@
             <tr>
                 <td class="auto-style2">Date</td>
                 <td>
-                    <asp:TextBox ID="TextBox2" runat="server" Height="38px" Width="195px"></asp:TextBox>  
+                    <asp:TextBox ID="TextBox2" runat="server" Height="38px" Width="195px" ReadOnly="true"></asp:TextBox>  
 
                     <asp:ImageButton ID="ImageButton1" runat="server" Height="30px" ImageUrl="~/images/calendar.png" OnClick="ImageButton1_Click" Width="30px" />
                     <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" BorderWidth="1px" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="190px" NextPrevFormat="FullMonth" OnSelectionChanged="Calendar1_SelectionChanged" Width="350px" OnDayRender="Calendar1_DayRender">
@@ -110,7 +118,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
-                <td>
+                <td colspan="2">
                     <asp:Button ID="Button1" runat="server" BackColor="#3366FF" BorderColor="White" BorderStyle="Solid" BorderWidth="5px" Height="45px" Text="Book Appointment" Width="238px" OnClick="Button1_Click" />
                 </td>
             </tr>

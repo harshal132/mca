@@ -15,7 +15,9 @@ public partial class Admin_Login : System.Web.UI.Page
 
     protected void loginButton(object sender, EventArgs e)
     {
-        if (TextBox1.Text.Equals("admin") && TextBox2.Text.Equals("admin"))
+        string userName = System.Web.Configuration.WebConfigurationManager.AppSettings["adminUsername"];
+        string userPassowrd = System.Web.Configuration.WebConfigurationManager.AppSettings["adminPassword"];
+        if (TextBox1.Text.Equals(userName) && TextBox2.Text.Equals(userPassowrd))
         {
             Response.Redirect("AdminAddDoctor.aspx");
         }
