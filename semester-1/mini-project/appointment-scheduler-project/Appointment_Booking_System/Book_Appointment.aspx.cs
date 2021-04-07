@@ -70,7 +70,7 @@ public partial class Book_Appointment : System.Web.UI.Page
             else
             {
                 if (checkIfDoctorIsBusy(DoctorName.SelectedValue, TextBox2.Text, Time.SelectedValue)) {
-                    displayMessage("Doctor is busy on selected Date and Time, Try selecting different Doctor or Time!");
+                    displayMessage("Doctor is busy on selected Date and Time, Try selecting different Date or Time!");
                 }
                 else
                 {
