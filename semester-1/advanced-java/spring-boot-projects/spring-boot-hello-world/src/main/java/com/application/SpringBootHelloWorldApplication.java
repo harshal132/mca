@@ -17,10 +17,4 @@ public class SpringBootHelloWorldApplication {
 //	public String homePage() {
 //		return "Hello World!";
 //	}
-//	@RequestMapping("/login")
-//	public String loginPage() {
-//		return "Login Page!";
-//	}
-	
-	
 }
