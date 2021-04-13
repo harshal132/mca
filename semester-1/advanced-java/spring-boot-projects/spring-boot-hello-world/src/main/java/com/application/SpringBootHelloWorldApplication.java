@@ -2,7 +2,7 @@ package com.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-//import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
@@ -13,8 +13,8 @@ public class SpringBootHelloWorldApplication {
 		SpringApplication.run(SpringBootHelloWorldApplication.class, args);
 	}
 //	Simple Way to write Hello World
-//	@RequestMapping("/")
-//	public String homePage() {
-//		return "Hello World!";
-//	}
+	@RequestMapping("/")
+	public String homePage() {
+		return "Hello World!";
+	}
 }
