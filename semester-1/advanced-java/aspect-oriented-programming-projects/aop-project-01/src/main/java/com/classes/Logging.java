@@ -13,7 +13,7 @@ public class Logging {
 	* after a selected method execution.
 	*/
 	public void afterAdvice(){
-		System.out.println("Student profile has been setup.");
+		System.out.println("Around Advice");
 	}
 	/**
 	* This is the method which I would like to execute

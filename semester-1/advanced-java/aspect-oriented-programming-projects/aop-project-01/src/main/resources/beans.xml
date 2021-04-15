@@ -11,8 +11,8 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
 	<aop:aspect id="log" ref="logging">
 		<aop:pointcut expression="execution(*
 com.classes.*.*(..))" id="myid"/>
-		<aop:before method="beforeAdvice" pointcut-ref="myid"/>
-		<aop:after method="afterAdvice" pointcut-ref="myid"/>
+		<!--<aop:before method="beforeAdvice" pointcut-ref="myid"/>-->
+		<aop:around method="afterAdvice" pointcut-ref="myid"/>
 	</aop:aspect>
 </aop:config>
 <bean id="student" class="com.classes.Student">
