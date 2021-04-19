@@ -1,10 +1,12 @@
 #Load Dataset to Work on
 library(arules)
-data("Groceries")
-print(attributes(Groceries))
-inspect(head(Groceries,3))
-View(Groceries)
+data("Adult")
+print(attributes(Adult))
+inspect(head(Adult,3))
+View(Adult)
 
 #Apply Apriori Algorithm
-model<-apriori(data=Groceries, parameter = list(support=0.001, confidence=0.15))
+model<-apriori(data=Adult, parameter = list(support=0.07, confidence=0.7))
 inspect(head(model,3))
+
+inspect(model[2:10])
