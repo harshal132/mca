@@ -5,17 +5,17 @@ app.config(function($routeProvider) {
 
   .when('/maps', {
     templateUrl : 'maps.html',
-    controller  : 'HomeController'
+    controller  : 'MapsController'
   })
 
   .when('/videos', {
     templateUrl : 'videos.html',
-    controller  : 'BlogController'
+    controller  : 'VideosController'
   })
 
   .when('/photos', {
     templateUrl : 'photos.html',
-    controller  : 'AboutController'
+    controller  : 'PhotosController'
   })
 
   .when('/home', {
@@ -26,15 +26,15 @@ app.config(function($routeProvider) {
   .otherwise({redirectTo: '/'});
 });
 
-app.controller('HomeController', function($scope) {
+app.controller('MapsController', function($scope) {
     $scope.message = 'Hello from Maps Page';
 });
   
-app.controller('BlogController', function($scope) {
+app.controller('VideosController', function($scope) {
     $scope.message = 'Hello from Videos Page';
 });
   
-app.controller('AboutController', function($scope) {
+app.controller('PhotosController', function($scope) {
     $scope.message = 'Hello from Photos page';
 });
 
