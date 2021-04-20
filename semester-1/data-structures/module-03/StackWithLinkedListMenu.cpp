@@ -15,6 +15,18 @@ class Stack_Linked {
 	void push();
 	void pop();
 	void display();
+	void insertAtEnd(int value){
+		NODE ptr=top;
+		while(ptr->link != NULL){
+			ptr = ptr->link;
+		}/*End of while */
+		NODE newNode;
+		newNode=(NODE)new(struct node);
+		newNode->link = NULL;
+		newNode->info = value;
+		ptr->link = newNode;
+		cout<<"Element Inserted successfully!";
+	}
 };
 //This function is to perform the push operation
 void Stack_Linked::push() {
@@ -82,6 +94,9 @@ int main() {
 				break;
 			case 4:
 				exit(1);
+			case 5:
+				So.insertAtEnd(30);
+				break;
 			default:
 				cout<<"\nWrong choice\n";
 		}
