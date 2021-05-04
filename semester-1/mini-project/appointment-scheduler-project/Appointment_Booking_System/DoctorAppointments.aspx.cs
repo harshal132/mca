@@ -24,12 +24,12 @@ public partial class DoctorAppointments : System.Web.UI.Page
         else
         {
             con.Open();
-            showdata();
-            display();
+            getDoctorDetails();
+            getAppointmentDetails();
 
         }
     }
-    public void showdata()
+    public void getDoctorDetails()
     {
         cmd.CommandText = "select * from DoctorDetails where EmailID ='" + Session["user"] + "'";
         cmd.Connection = con;
@@ -44,13 +44,13 @@ public partial class DoctorAppointments : System.Web.UI.Page
         GridView1.DataBind();
 
     }
-    public void display()
+    public void getAppointmentDetails()
     {
-        // cmd.CommandText = "select * from Appointment where Doctor_Name='"+Label1.Text.ToString()+"'";
-        //cmd.Connection = con;
-        //sda.SelectCommand = cmd;
-        //sda.Fill(ds);
-        //GridView1.DataSource = ds;
+        cmd.CommandText = "select * from Appointment where Doctor_Name='"+Label1.Text.ToString()+"'";
+        cmd.Connection = con;
+        sda.SelectCommand = cmd;
+        sda.Fill(ds);
+        GridView1.DataSource = ds;
     }
 
 
