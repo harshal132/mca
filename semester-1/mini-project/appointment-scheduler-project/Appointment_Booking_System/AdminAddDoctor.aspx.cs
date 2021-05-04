@@ -32,7 +32,7 @@ public partial class AdminAddDoctor : System.Web.UI.Page
         string query = "select COUNT(*) from DoctorDetails where Id ="+random+";";
         using (var cmd = new SqlCommand(query, con))
         {
-            int rowsAmount = (int)cmd.ExecuteScalar(); // get the value of the count
+            int rowsAmount = (int)cmd.ExecuteScalar(); // get the value of the count...returns a single value
             if (rowsAmount > 0)
             {
                 con.Close();

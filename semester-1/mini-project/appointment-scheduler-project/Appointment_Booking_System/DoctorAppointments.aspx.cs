@@ -46,11 +46,11 @@ public partial class DoctorAppointments : System.Web.UI.Page
     }
     public void display()
     {
-        // cmd.CommandText = "select * from Appointment where Doctor_Name='"+Label1.Text.ToString()+"'";
-        //cmd.Connection = con;
-        //sda.SelectCommand = cmd;
-        //sda.Fill(ds);
-        //GridView1.DataSource = ds;
+        cmd.CommandText = "select * from Appointment where Doctor_Name='"+Label1.Text.ToString()+"'";
+        cmd.Connection = con;
+        sda.SelectCommand = cmd;
+        sda.Fill(ds);
+        GridView1.DataSource = ds;
     }
 
 
