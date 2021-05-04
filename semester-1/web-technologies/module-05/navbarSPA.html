@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js">
+        </script>
+        <style>
+            body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+
+            .topnav {
+            overflow: hidden;
+            background-color: #333;
+            }
+
+            .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            }
+
+            .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+            }
+
+            .topnav a.active {
+            background-color: #4CAF50;
+            color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="#home">FORECASTS</a>
+            <a href="#/maps">MAPS</a>
+            <a href="#/videos">VIDEOS</a>
+            <a href="#/photos">PHOTOS</a>
+        </div>
+
+
+        <script type="text/ng-template" style="padding-left:16px" id="maps.html">
+            <h1>Maps</h1>
+            <h3>{{message}}</h3>
+            <img src="maps.jpg" style="background-size:100% 100%;"/>
+        </script>
+        <script type="text/ng-template" style="padding-left:16px" id="videos.html">
+            <h1>Videos</h1>
+            <h3>{{message}}</h3>
+            <img src="videos.jpg" style="background-size:100% 100%;"/>
+        </script>
+        <script type="text/ng-template" style="padding-left:16px" id="photos.html">
+            <h1>Photos</h1>
+            <h3>{{message}}</h3>
+            <img src="photos.jpg" style="background-size:100% 100%;"/>
+        </script>
+
+        <script type="text/ng-template" style="padding-left:16px" id="forecasts.html">
+            <h1>Forecasts</h1>
+            <h3>{{message}}</h3>
+            <img src="forecast.jpg" style="background-size:100% 100%;"/>
+        </script>
+
+        <div ng-view></div>
+        <script src="app.js"></script>
+    </body>
+</html>

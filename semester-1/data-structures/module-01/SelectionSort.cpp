@@ -1,6 +1,5 @@
 //Selection Sort
 #include<iostream>
-
 using namespace std;
 void showArray(int *arr,int size) {
 	//cout<<"Saved Array is \n";
