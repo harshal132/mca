@@ -109,7 +109,7 @@ void performOperation(int choice){
 		}
 	}
 	if(choice == 4){
-		goto CHECK_OPERATION;
+		goto TRANSPOSE_OPERATION;
 	}
 	cout << endl << "\nEnter elements of matrix 2:" << endl;
 	for(i = 0; i < rowSecond; ++i)
@@ -120,8 +120,6 @@ void performOperation(int choice){
 			cin >> secondMatrix[i][j];
 		}
 	}
-	//label
-	CHECK_OPERATION:
 	if(choice==3){
 		multiplyMatrices(firstMatrix, secondMatrix, rowFirst, columnFirst, rowSecond, columnSecond);
 	}
@@ -142,6 +140,7 @@ void performOperation(int choice){
 		}
 	}
 	else{
+		TRANSPOSE_OPERATION:
 		transpose(firstMatrix, rowFirst, columnFirst);
 	}
 	//label
