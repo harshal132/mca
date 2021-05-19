@@ -77,7 +77,7 @@ public partial class Book_Appointment : System.Web.UI.Page
                     SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
                     string insert = "insert into Appointment values(@email_id,@category,@doctorName,@patientName,@date,@time)";
                     SqlCommand cmd = new SqlCommand(insert, con);
-                    showdata();
+                    //showdata();
                     cmd.Parameters.AddWithValue("@email_id", TextBox1.Text);
                     cmd.Parameters.AddWithValue("@category", Category.SelectedItem.Text);
                     cmd.Parameters.AddWithValue("@doctorName", DoctorName.SelectedValue);
@@ -96,7 +96,7 @@ public partial class Book_Appointment : System.Web.UI.Page
         {
             displayMessage("You already booked the appointment...");
         }
-        SessionData();
+        //SessionData();
 
 
     }
@@ -166,8 +166,7 @@ public partial class Book_Appointment : System.Web.UI.Page
             e.Cell.ForeColor = System.Drawing.Color.Gray;
         }
     }
-
-    public void displayMessage(String message)
+    public void displayMessage(String message) // For Alerts
     {
         Type cstype = this.GetType();
 
@@ -223,7 +222,7 @@ public partial class Book_Appointment : System.Web.UI.Page
         smtp.Send(mail);
     }
 
-    public String getDoctorMail(String doctorName) {
+    public String getDoctorMail(String doctorName) { // get doctor name from database
         SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True");
         con.Open();
         string query = "select EmailID from DoctorDetails where Name = '" + doctorName + "';";
