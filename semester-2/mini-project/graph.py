@@ -6,7 +6,6 @@ import logging
 import dash
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
-import dash
 from dash.dependencies import Output, Input
 import dash_core_components as dcc
 import dash_html_components as html
@@ -19,7 +18,7 @@ from collections import deque
 #import dash_table_experiments as dt
 import yfinance as yf
 
-allstk= ["HINDALCO", "ULTRACEMCO", "ICICIBANK", "SUNPHARMA", "ADANIPORTS", "SBIN", "BHARTIARTL", "LT", "INDUSINDBK", "HINDUNILVR", "AXISBANK", "GRASIM", "NESTLEIND", "GAIL", "HEROMOTOCO", "ITC", "ONGC", "KOTAKBANK", "TECHM", "TITAN", "ASIANPAINT", "INFY", "HDFCBANK", "TCS", "M&M", "TATASTEEL", "SBILIFE", "CIPLA", "MARUTI", "BAJAJ-AUTO", "UPL", "IOC", "POWERGRID", "BRITANNIA", "BAJFINANCE", "DIVISLAB", "EICHERMOT", "WIPRO", "SHREECEM", "JSWSTEEL", "BAJAJFINSV", "DRREDDY", "HCLTECH", "HDFC", "COALINDIA", "NTPC", "TATAMOTORS", "BPCL", "HDFCLIFE", "RELIANCE"]
+allstk= ["HINDALCO", "ZOMATO", "ULTRACEMCO", "ICICIBANK", "SUNPHARMA", "ADANIPORTS", "SBIN", "BHARTIARTL", "LT", "INDUSINDBK", "HINDUNILVR", "AXISBANK", "GRASIM", "NESTLEIND", "GAIL", "HEROMOTOCO", "ITC", "ONGC", "KOTAKBANK", "TECHM", "TITAN", "ASIANPAINT", "INFY", "HDFCBANK", "TCS", "M&M", "TATASTEEL", "SBILIFE", "CIPLA", "MARUTI", "BAJAJ-AUTO", "UPL", "IOC", "POWERGRID", "BRITANNIA", "BAJFINANCE", "DIVISLAB", "EICHERMOT", "WIPRO", "SHREECEM", "JSWSTEEL", "BAJAJFINSV", "DRREDDY", "HCLTECH", "HDFC", "COALINDIA", "NTPC", "TATAMOTORS", "BPCL", "HDFCLIFE", "RELIANCE"]
   
 def sma(data_plot):
   data_plot['SMA_50']=data_plot['Close'].rolling(50).mean()
